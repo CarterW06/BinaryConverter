@@ -33,6 +33,10 @@ public class BinaryConverter implements ActionListener, KeyListener{
 			long asciiValue = Integer.parseInt(binary, 2);
 			return "" + asciiValue;
 		}
+		catch(NumberFormatException a) {
+			JOptionPane.showMessageDialog(frame, "A NumberFormatException occured because of user input that cannot be converted.  Details are below:\n" + a);
+			return "";
+		}
 		catch(Exception e) {
 			JOptionPane.showMessageDialog(frame, "An exception occured in Java.  Details are below:\n" + e);
 			return "";
